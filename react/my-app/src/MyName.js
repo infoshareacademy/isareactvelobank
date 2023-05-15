@@ -1,5 +1,5 @@
-function MyName() {
-    return <h1>Moje imię to Kamil!</h1>
+function MyName(props) {
+    return <h1>Moje imię to {props.name}!</h1>
 }
 
 export default MyName;

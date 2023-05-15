@@ -2,7 +2,7 @@ import MyName from './MyName';
 
 function App() {
   return (
-    <MyName />
+    <MyName name="Kamil" />
   );
 }
 
