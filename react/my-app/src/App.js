@@ -1,9 +1,10 @@
+import Wrapper from './Wrapper';
 import MyName from './MyName';
 import { Contact } from './Contact';
 
 function App() {
   return (
-    <>
+    <Wrapper>
         <MyName name="Kamil" />
         <MyName name="Kamil" surname="Richert" />
         <Contact data={
@@ -13,7 +14,7 @@ function App() {
                 email: 'moj@mail.com'
             }
         } />
-    </>
+    </Wrapper>
   );
 }
 
