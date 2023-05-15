@@ -1,8 +1,6 @@
 import './Contact.css';
 
-export function Contact(props) {
-    const { data: { phone, address, email } } = props; 
-
+export function Contact({ data: { phone, address, email } }) {
     return (
         <div className="contact-container">
             <h3>TEL</h3>
