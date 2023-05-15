@@ -1,6 +1,13 @@
 import Wrapper from './Wrapper';
 import MyName from './MyName';
+import { MyFavouriteDishes } from './MyFavouriteDishes';
 import { Contact } from './Contact';
+
+const dishes = [
+     { id: 1, name: 'Kebab' },
+     { id: 2, name: 'Zupa pomidorowa' },
+     { id: 3, name: 'Homar' },
+]
 
 function App() {
   return (
@@ -14,6 +21,7 @@ function App() {
                 email: 'moj@mail.com'
             }
         } />
+        <MyFavouriteDishes dishes={dishes} />
     </Wrapper>
   );
 }
