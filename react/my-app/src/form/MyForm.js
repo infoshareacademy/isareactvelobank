@@ -1,10 +1,18 @@
 import { useState } from "react";
 import styled from "styled-components"
+import { z } from 'zod';
 
 const Form = styled.form`
     display: flex;
     flex-direction: column;
 `;
+
+const formSchema = z.object({
+    name: z.string(),
+    age: z.number(),
+    gender: z.enum(['mezczyzna', 'kobieta', 'nie podano']),
+    comment: z.string().optional()
+})
 
 
 export const MyForm = () => {
@@ -14,13 +22,20 @@ export const MyForm = () => {
     const [comment, setComment] = useState('');
 
     const handleNameChange = (e) => setName(e.target.value);
-    const handleAgeChange = (e) => setAge(e.target.value);
+    const handleAgeChange = (e) => setAge(parseInt(e.target.value));
     const handleGenderChange = (e) => setGender(e.target.value);
     const handleCommentChange = (e) => setComment(e.target.value);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(JSON.stringify({ name, age, gender, comment }, null, 2))
+        const formData = { name, age, gender, comment };
+
+        try {
+            formSchema.parse(formData);
+            alert(JSON.stringify(formData, null, 2))
+        } catch (e) {
+            console.error(e)
+        }
     }
  
     return (
