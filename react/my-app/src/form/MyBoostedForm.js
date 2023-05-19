@@ -26,6 +26,20 @@ export const MyBoostedForm = () => {
         >
             {({ handleSubmit }) => (
                 <FormContainer onSubmit={handleSubmit}>
+                    {[{
+                        label: 'Lubie pizze',
+                        component: 'input',
+                        name: 'pizza radio button'
+                    }].map(({ name, component, label}) => (
+                        <>
+                            <label>{label}</label>
+                            <Field
+                                name={name}
+                                component={component}
+                                type="text"
+                            />
+                        </>
+                    ))}
                     <label>Imię</label>
                     <Field
                         name="name"
