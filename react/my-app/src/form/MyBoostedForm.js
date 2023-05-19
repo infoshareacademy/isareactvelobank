@@ -23,7 +23,8 @@ export const MyBoostedForm = () => {
                     comment: ''
                 }
             }
-            render={({ handleSubmit }) => (
+        >
+            {({ handleSubmit }) => (
                 <FormContainer onSubmit={handleSubmit}>
                     <label>Imię</label>
                     <Field
@@ -51,7 +52,7 @@ export const MyBoostedForm = () => {
                     <input type="submit" value="Wyślij" />
                 </FormContainer>
             )}
-        />
+        </Form>
             
     )
 }
