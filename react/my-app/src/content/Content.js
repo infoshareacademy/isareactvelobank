@@ -4,6 +4,7 @@ import AboutMe from '../about-me/AboutMe';
 import { Game } from '../game/Game';
 import { GameClass } from '../game/GameClass';
 import { Users } from '../users/Users';
+import { UserDetails } from '../users/UserDetails';
 import { MyForm } from '../form/MyForm';
 import { MyBetterForm } from '../form/MyBetterForm';
 import { MyBoostedForm } from '../form/MyBoostedForm';
@@ -24,6 +25,7 @@ export const Content = () => (
                     <GameClass name="Fallout" />
                 </>} />
             <Route path="/users" element={<Users />} />
+            <Route path="/users/:id" element={<UserDetails />} />
             <Route path="/sign" element={<Sign />} />
             <Route path="*" element={<h1>Taka stronie nie istnieje.</h1>} />
         </Routes>
