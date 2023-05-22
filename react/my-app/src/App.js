@@ -27,6 +27,7 @@ function App() {
                         <GameClass name="Fallout" />
                     </>} />
                 <Route path="/users" element={<Users />} />
+                <Route path="*" element={<h1>Taka stronie nie istnieje.</h1>} />
             </Routes>
         </Wrapper>
     </>
