@@ -3,7 +3,8 @@ const Wrapper = ({ children }) => {
         {
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center'
+            alignItems: 'center',
+            marginTop: '25px'
         }
     }>
         {children}

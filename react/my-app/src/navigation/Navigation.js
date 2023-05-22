@@ -15,6 +15,7 @@ const links = [
     { path: '/game', label: 'Game' },
     { path: '/form', label: 'Form' },
     { path: '/users', label: 'Users' },
+    { path: '/sign', label: 'Sign' },
 ]
 
 export const Navigation = () => {

@@ -7,6 +7,7 @@ import { Users } from '../users/Users';
 import { MyForm } from '../form/MyForm';
 import { MyBetterForm } from '../form/MyBetterForm';
 import { MyBoostedForm } from '../form/MyBoostedForm';
+import { Sign } from '../sign/Sign';
 
 export const Content = () => (
     <Wrapper>
@@ -23,6 +24,7 @@ export const Content = () => (
                     <GameClass name="Fallout" />
                 </>} />
             <Route path="/users" element={<Users />} />
+            <Route path="/sign" element={<Sign />} />
             <Route path="*" element={<h1>Taka stronie nie istnieje.</h1>} />
         </Routes>
     </Wrapper>
