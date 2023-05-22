@@ -9,17 +9,23 @@ const getActiveStyles = ({ isActive }) => {
     }
 }
 
+const links = [
+    { path: '/', label: 'Home' },
+    { path: '/about-me', label: 'About me' },
+    { path: '/game', label: 'Game' },
+    { path: '/form', label: 'Form' },
+    { path: '/users', label: 'Users' },
+]
+
 export const Navigation = () => {
     return (
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand>My App</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link as={RouterLink} style={getActiveStyles} to="/">Home</Nav.Link>
-            <Nav.Link as={RouterLink} style={getActiveStyles} to="/about-me">About me</Nav.Link>
-            <Nav.Link as={RouterLink} style={getActiveStyles} to="/game">Game</Nav.Link>
-            <Nav.Link as={RouterLink} style={getActiveStyles} to="/form">Form</Nav.Link>
-            <Nav.Link as={RouterLink} style={getActiveStyles} to="/users">Users</Nav.Link>
+            {links.map((link) => (
+                <Nav.Link as={RouterLink} style={getActiveStyles} to={link.path} key={link.path}>{link.label}</Nav.Link>
+            ))}
           </Nav>
         </Container>
       </Navbar>
