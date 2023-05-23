@@ -22,11 +22,10 @@ export const UserDetails = () => {
         } finally {
             setIsLoading(false);
         }
-
     }
 
     useEffect(() => {
-        fetchData();
+        fetchData()
     }, []);
 
     if (isLoading) {
