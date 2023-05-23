@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner'
 
@@ -8,7 +8,7 @@ export const UserDetails = () => {
     const [error, setError] = useState(null);
     const params = useParams();
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         try {
             const r = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`);
             if (r.ok) {
@@ -22,11 +22,11 @@ export const UserDetails = () => {
         } finally {
             setIsLoading(false);
         }
-    }
+    }, [params.id])
 
     useEffect(() => {
         fetchData()
-    }, []);
+    }, [fetchData]);
 
     if (isLoading) {
         return <Spinner />
