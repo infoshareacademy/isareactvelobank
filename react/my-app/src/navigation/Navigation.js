@@ -1,7 +1,9 @@
+import { useContext } from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { ThemeContext } from '../App';
 
 const getActiveStyles = ({ isActive }) => {
     return {
@@ -19,8 +21,10 @@ const links = [
 ]
 
 export const Navigation = () => {
+    const theme = useContext(ThemeContext);
+
     return (
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg={theme} variant={theme}>
         <Container>
           <Navbar.Brand>My App</Navbar.Brand>
           <Nav className="me-auto">

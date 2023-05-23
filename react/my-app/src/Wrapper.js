@@ -1,10 +1,18 @@
+import { useContext } from "react";
+import { ThemeContext } from "./App";
+
 const Wrapper = ({ children }) => {
+    const theme = useContext(ThemeContext);
+
     return <div style={
         {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            marginTop: '25px'
+            paddingTop: '25px',
+            color: theme === 'dark' ? 'white' : 'black',
+            backgroundColor: theme === 'dark' ? 'black' : 'white',
+            height: 'calc(100vh - 56px)'
         }
     }>
         {children}
