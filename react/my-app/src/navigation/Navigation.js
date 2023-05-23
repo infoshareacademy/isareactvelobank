@@ -1,9 +1,8 @@
-import { useContext } from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { ThemeContext } from '../App';
+import { useThemeContext } from '../contexts/theme/ThemeContext';
 
 const getActiveStyles = ({ isActive }) => {
     return {
@@ -21,7 +20,7 @@ const links = [
 ]
 
 export const Navigation = () => {
-    const theme = useContext(ThemeContext);
+    const { theme, setTheme} = useThemeContext();
 
     return (
       <Navbar bg={theme} variant={theme}>
@@ -31,6 +30,10 @@ export const Navigation = () => {
             {links.map((link) => (
                 <Nav.Link as={RouterLink} style={getActiveStyles} to={link.path} key={link.path}>{link.label}</Nav.Link>
             ))}
+          </Nav>
+          <Nav>
+            <Nav.Link onClick={() => setTheme('dark')}>Dark</Nav.Link>
+            <Nav.Link onClick={() => setTheme('light')}>Light</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

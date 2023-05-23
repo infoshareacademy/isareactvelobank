@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { ThemeContext } from "./App";
+import { useThemeContext } from "./contexts/theme/ThemeContext";
 
 const Wrapper = ({ children }) => {
-    const theme = useContext(ThemeContext);
+    const { theme } = useThemeContext();
 
     return <div style={
         {
