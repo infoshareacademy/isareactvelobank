@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner'
 
@@ -8,9 +8,11 @@ export const UserDetails = () => {
     const [error, setError] = useState(null);
     const params = useParams();
 
+    const formattedParamId = useMemo(() => ({ result: params.id + '0' }), [params.id])
+
     const fetchData = useCallback(async () => {
         try {
-            const r = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`);
+            const r = await fetch(`https://jsonplaceholder.typicode.com/users/${formattedParamId.result}`);
             if (r.ok) {
                 const data = await r.json();
                 setUser(data);
@@ -22,7 +24,7 @@ export const UserDetails = () => {
         } finally {
             setIsLoading(false);
         }
-    }, [params.id])
+    }, [formattedParamId])
 
     useEffect(() => {
         fetchData()
