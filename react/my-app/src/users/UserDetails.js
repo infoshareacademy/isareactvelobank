@@ -1,7 +1,43 @@
-import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import Spinner from 'react-bootstrap/Spinner'
 
 export const UserDetails = () => {
+    const [user, setUser] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
     const params = useParams();
 
-    return <h2>Witaj uzytkowniku o id {params.id}!</h2>
+    useEffect(() => {
+        fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
+            .then(r => {
+                if (r.ok) {
+                    return r.json();
+                }
+
+                setError(Error('NO 200'));
+            })
+            .then(data => {
+                setUser(data);
+            })
+            .catch(err => {
+                setError(err);
+            })
+            .finally(() => {
+                setIsLoading(false);
+            })
+    }, [params.id]);
+
+    if (isLoading) {
+        return <Spinner />
+    }
+
+    if (error) {
+        return <>
+            <h2>Wystąpił błąd podczas pobierania!</h2>
+            <h4>{error.message}</h4>
+        </>;
+    }
+
+    return <h2>Witaj {user.name}!</h2>
 }
