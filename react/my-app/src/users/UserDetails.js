@@ -8,25 +8,26 @@ export const UserDetails = () => {
     const [error, setError] = useState(null);
     const params = useParams();
 
-    useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
-            .then(r => {
-                if (r.ok) {
-                    return r.json();
-                }
-
-                setError(Error('NO 200'));
-            })
-            .then(data => {
+    const fetchData = async () => {
+        try {
+            const r = await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`);
+            if (r.ok) {
+                const data = await r.json();
                 setUser(data);
-            })
-            .catch(err => {
-                setError(err);
-            })
-            .finally(() => {
-                setIsLoading(false);
-            })
-    }, [params.id]);
+            } else {
+                setError(Error('NO 200'))
+            }
+        } catch (err) {
+            setError(err);
+        } finally {
+            setIsLoading(false);
+        }
+
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     if (isLoading) {
         return <Spinner />
