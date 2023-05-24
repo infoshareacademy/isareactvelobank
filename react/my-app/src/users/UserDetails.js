@@ -8,7 +8,7 @@ export const UserDetails = () => {
     const [error, setError] = useState(null);
     const params = useParams();
 
-    const formattedParamId = useMemo(() => ({ result: params.id + '0' }), [params.id])
+    const formattedParamId = useMemo(() => ({ result: params.id + '' }), [params.id])
 
     const fetchData = useCallback(async () => {
         try {
