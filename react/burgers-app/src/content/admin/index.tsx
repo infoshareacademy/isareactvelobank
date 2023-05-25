@@ -1,1 +1,7 @@
-export const Admin = () => <h1>Admin</h1>
+import { PageWrapper } from "../../common/page-wrapper"
+
+export const Admin = () => {
+    return <PageWrapper title="Admin">
+
+    </PageWrapper>
+}

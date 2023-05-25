@@ -1,1 +1,9 @@
-export const Home = () => <h1>Home</h1>
+import { PageWrapper } from "../../common/page-wrapper"
+
+export const Home = () => {
+    return (
+        <PageWrapper title="Welcome to our site!">
+            
+        </PageWrapper>
+    )
+}

@@ -1,1 +1,7 @@
-export const Menu = () => <h1>Menu</h1>
+import { PageWrapper } from "../../common/page-wrapper"
+
+export const Menu = () => {
+    return <PageWrapper title="Menu">
+
+    </PageWrapper>
+}
