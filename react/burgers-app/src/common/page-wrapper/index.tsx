@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 type Props = { 
-    title: string, 
+    title?: string, 
     children: ReactNode 
 }
 

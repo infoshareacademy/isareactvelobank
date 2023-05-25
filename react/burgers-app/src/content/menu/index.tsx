@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -37,7 +38,9 @@ export const Menu = () => {
                             <TableBody>
                                 {burgers?.map((burger) => (
                                         <TableRow key={burger.id}>
-                                            <TableCell>{burger.name}</TableCell>
+                                            <TableCell>
+                                                <Link to={burger.id}>{burger.name}</Link>    
+                                            </TableCell>
                                             <TableCell align="right">{burger.ingredients}</TableCell>
                                             <TableCell align="right">{burger.price}</TableCell>
                                         </TableRow>
