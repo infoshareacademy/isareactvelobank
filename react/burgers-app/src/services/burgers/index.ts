@@ -9,8 +9,7 @@ export const getBurgers = async (): Promise<Burger[]> => {
 
 export const getBurger = async (id: string): Promise<BurgerData> => {
     const r = await fetch(`https://rest-api-b6410.firebaseio.com/burgers/${id}.json`);
-    const data = await r.json()
-    return data;
+    return r.json()
 }
 
 export const addBurger = async (burgerData: BurgerData): Promise<BurgerData> => {
@@ -18,6 +17,12 @@ export const addBurger = async (burgerData: BurgerData): Promise<BurgerData> => 
         method: 'POST',
         body: JSON.stringify(burgerData)
     });
-    const data = await r.json()
-    return data;
+    return r.json()
+}
+
+export const deleteBurger = async (id: string): Promise<void> => {
+    const r = await fetch(`https://rest-api-b6410.firebaseio.com/burgers/${id}.json`, {
+        method: 'DELETE',
+    });
+    return r.json()
 }

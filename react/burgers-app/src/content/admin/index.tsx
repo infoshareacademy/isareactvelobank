@@ -12,6 +12,7 @@ import { PageWrapper } from "../../common/page-wrapper";
 import { Burger } from '../../common/types';
 import { getBurgers } from '../../services/burgers';
 import { AddModalButton } from './add-modal-button';
+import { Row } from './row';
 
 export const Admin = () => {
     const { data: burgers, error, isLoading } = useQuery<Burger[], Error>('burgers', getBurgers);
@@ -35,16 +36,12 @@ export const Admin = () => {
                                     <TableCell>Name</TableCell>
                                     <TableCell align="right">Ingredients</TableCell>
                                     <TableCell align="right">Price</TableCell>
+                                    <TableCell sx={{ width: '64px' }} />
+                                    <TableCell sx={{ width: '64px' }} />
                                 </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {burgers?.map((burger) => (
-                                            <TableRow key={burger.id}>
-                                                <TableCell>{burger.name}</TableCell>
-                                                <TableCell align="right">{burger.ingredients}</TableCell>
-                                                <TableCell align="right">{burger.price}</TableCell>
-                                            </TableRow>
-                                    ))}
+                                    {burgers?.map((burger) => <Row key={burger.id} burger={burger} />)}
                                 </TableBody>
                             </Table>
                         </TableContainer>
