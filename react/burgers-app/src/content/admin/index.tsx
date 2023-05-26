@@ -13,8 +13,9 @@ import { Burger } from '../../common/types';
 import { getBurgers } from '../../services/burgers';
 import { AddModalButton } from './add-modal-button';
 import { Row } from './row';
+import { Auth } from '../../common/auth';
 
-export const Admin = () => {
+const AdminView = () => {
     const { data: burgers, error, isLoading } = useQuery<Burger[], Error>('burgers', getBurgers);
 
     if (error) {
@@ -53,4 +54,11 @@ export const Admin = () => {
             }
         </PageWrapper>
     )
+}
+
+
+export const Admin = () => {
+    return <Auth>
+        <AdminView />
+    </Auth>
 }
