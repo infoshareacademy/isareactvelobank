@@ -1,0 +1,34 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "Jan",
+      "type": "INTERNAL",
+      "registered": "2019-05-11T22:00:00.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Maria",
+      "type": "INTERNAL",
+      "registered": "2018-04-10T22:00:00.000Z"
+    },
+    {
+      "id": 3,
+      "name": "Anna",
+      "type": "EXTERNAL",
+      "registered": "2017-03-09T23:00:00.000Z"
+    },
+    {
+      "id": 4,
+      "name": "Andrzej",
+      "type": "EXTERNAL",
+      "registered": "2020-11-08T23:00:00.000Z"
+    },
+    {
+      "id": 5,
+      "name": "Janina",
+      "type": "INTERNAL",
+      "registered": "2019-12-02T23:00:00.000Z"
+    }
+  ]
+}

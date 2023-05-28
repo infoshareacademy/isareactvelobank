@@ -1,0 +1,27 @@
+{
+  "name": "jest-mock-exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "server:dev": "json-server data/db.json --port 3004"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@types/jest": "^26.0.15",
+    "jest": "^26.5.2",
+    "json-server": "^0.16.2",
+    "prettier": "^2.1.2"
+  },
+  "jest": {
+    "rootDir": "./src"
+  },
+  "dependencies": {
+    "uuid": "^8.3.1"
+  }
+}
