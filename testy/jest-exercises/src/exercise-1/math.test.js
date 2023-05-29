@@ -2,15 +2,15 @@ import { factorial } from './math';
 
 describe('factorial', () => {
   test('should return 1 for factorial from 1', () => {
-
+    expect(factorial(1)).toBe(1);
   });
 
   test('should return correct value for factorial from 3', () => {
-
+    expect(factorial(3)).toBe(6);
   });
 
   test('should return correct value for factorial from 4', () => {
-
+    expect(factorial(4)).toBe(24);
   });
 
   const testCases = [
