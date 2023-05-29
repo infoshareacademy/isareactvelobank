@@ -1,3 +1,3 @@
 export const logger = {
-    error: (message, error) => console.log('== ups :( ===', message, error)
+    error: (message, error) => console.error('== ups :( ===', message, error)
 };

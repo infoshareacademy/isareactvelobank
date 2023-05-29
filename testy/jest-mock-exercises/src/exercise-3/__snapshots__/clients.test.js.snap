@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`filterClients should filter only INTERNAL clients for INTERNAL type 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "name": "Jan",
+    "registered": "2019-05-11T22:00:00.000Z",
+    "type": "INTERNAL",
+  },
+  Object {
+    "id": 2,
+    "name": "Maria",
+    "registered": "2018-04-10T22:00:00.000Z",
+    "type": "INTERNAL",
+  },
+  Object {
+    "id": 5,
+    "name": "Janina",
+    "registered": "2019-12-02T23:00:00.000Z",
+    "type": "INTERNAL",
+  },
+]
+`;
